@@ -3,7 +3,8 @@
         
         <mat-form-field class="example-form-field">
             <mat-label>Digite nombre de la tarea</mat-label>
-            <input matInput type="text">
+            <!--Para usilizar el [(ngModel)] es necesatio importar FomrsModule en el app.module.ts-->
+            <input matInput type="text" [(ngModel)]="nombreTarea">
             <button matSuffix mat-icon-button aria-label="Clear">
               <mat-icon>close</mat-icon>
             </button>
