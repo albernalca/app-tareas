@@ -1,12 +1,12 @@
 export class Tarea{
     //creo atributos
-    nombreTarea: string
+    nombre: string
     estado: boolean
 
     //creo constructor para iterar los atributos    
     constructor(nombreTarea: string, estado: boolean){
   
-        this.nombreTarea = nombreTarea
+        this.nombre = nombreTarea
         this.estado = estado
     }
 }

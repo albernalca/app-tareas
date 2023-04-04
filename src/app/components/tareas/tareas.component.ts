@@ -9,10 +9,11 @@ import { Tarea } from 'src/app/models/models.tarea';
 export class TareasComponent implements OnInit {
 
   //Declaro variables
-  listaTareas: Tarea[] = []
+  listaTarea: Tarea[] = []
   nombreTarea= '' 
-
-  constructor(){}
+  constructor(){
+  
+  }
 
   ngOnInit(): void {
     
@@ -21,11 +22,16 @@ export class TareasComponent implements OnInit {
   agregarTarea(){
      
     //Creo un objeto tarea
-
+    const tarea: Tarea= {
+      nombre: this.nombreTarea,
+      estado: false
+    }
 
     // agregar el objeto tarea al array
+    this.listaTarea.push(tarea)
 
     //Resetiar el input o formulario
+    this.nombreTarea = ''
   }
 
 }
