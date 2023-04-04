@@ -19,6 +19,7 @@ export class TareasComponent implements OnInit {
     
   }
 
+  //Creo metodo
   agregarTarea(){
      
     //Creo un objeto tarea
@@ -32,6 +33,11 @@ export class TareasComponent implements OnInit {
 
     //Resetiar el input o formulario
     this.nombreTarea = ''
+  }
+
+  //Creo metodo para eliminar.
+  eliminarTarea(index: number): void{
+    this.listaTarea.splice(index, 1)
   }
 
 }

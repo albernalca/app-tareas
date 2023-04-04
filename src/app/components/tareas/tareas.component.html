@@ -16,12 +16,23 @@
         <div *ngIf="listaTarea.length === 0" class="card p-2 text-center">
             <h3>No hay tareas para mostrar</h3>
         </div>
-        <br>
-        <mat-list role="list">
-            <!--Con la directiva ngFor itero la lista tareas para mostarlas en una lista-->
-            <mat-list-item role="listitem"*ngFor="let tarea of listaTarea" class="fondo mt-2">
-                {{tarea.nombre}}
-            </mat-list-item>
-        </mat-list>
+        
+        <div class="d-flex justify-content-around">
+            <mat-list role="list">
+                <!--Con la directiva ngFor itero la lista tareas para mostarlas en una lista-->
+                <!--let i = index para saber el índice de los elementos y poder eliminarlos-->
+                <mat-list-item role="listitem"*ngFor="let tarea of listaTarea; let i = index" class="fondo mt-2" >
+                    {{tarea.nombre}}
+                    <span>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+                    </span>
+                    <!--llamo el metodo eliminarTarea y paso por parametro la posición del array i-->
+                    <span (click)="eliminarTarea(i)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" style="color: #ff0000;"></mat-icon>
+                    </span>
+                </mat-list-item>
+            </mat-list>
+        </div>
+
     </div>
 </div>
